@@ -8,4 +8,3 @@ def print_last_digit(number):
 
     print("{:d}".format(l_d), end="")
     return (l_d)
-
