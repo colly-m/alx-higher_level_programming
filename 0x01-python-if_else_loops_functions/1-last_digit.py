@@ -14,4 +14,4 @@ if digit == 0:
 elif digit > 5 and digit % 10 != 0:
     print(f"{output} and is greater than 5")
 else:
-    print(f"{output} and is less thsn 6 and not 0")
+    print(f"{output} and is less than 6 and not 0")
