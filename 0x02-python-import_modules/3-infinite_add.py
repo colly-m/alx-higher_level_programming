@@ -1,8 +1,15 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    import sys
+import sys
+
+def main():
+    args = sys.argv[1:]
+
     sum = 0
-    for arg in sys.argv:
-        if arg != sys.argv[0]:
-            sum += int(arg)
-            print(sum)
+
+    for arg in args:
+        sum += int(arg)
+
+    print(sum)
+
+if __name__ == "__main__":
+    main()
