@@ -4,18 +4,25 @@
 
 /**
  * print_python_list_info - function to print info on python list
- * @p: pointer to object to be checked
+ * @p: pointer to object list to be check
  * Return: void
  */
 void print_python_list_info(PyObject *p)
 {
-	long int size = PyList_size(p);
-	int t;
-	PyListObject *ob = (PyListObject *)p;
+	PyObject *ob;
+	int s, t, u;
 
-	printf("[*] Size of the Python List = %li\n", size);
-	printf("[*] Allocated = %li\n", ob->allocated);
+	s = Py_SIZE(p);
+	t - ((PyListObject *)p)->allocated;
 
-	for (t = 0; t < Py_SIZE(p); t++)
-		printf("Element %d: %s\n", t, Py_TYPE(ob_GetItem[t])->tp_name);
+	printf("[*] Size of the Python List = %d\n", s);
+	printf("[*] Allocated = %d\n", t);
+
+	for (u = 0; u < s; u++)
+	{
+		printf("Element %d: ", u);
+
+		ob = PyList_GetItem(p, u);
+		printf("%s\n", Py_TYPE(ob)->tp_name);
+	}
 }
