@@ -8,4 +8,3 @@ def search_replace(my_list, search, replace):
             n_list.append(obj)
 
     return (n_list)
-
