@@ -2,7 +2,5 @@
 """Square class defined"""
 
 class Square:
-    """
-    Square class body, representing a square shape.
-    """
+    """Square class body, representing a square shape."""
     pass
