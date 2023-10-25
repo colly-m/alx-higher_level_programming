@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import math
 """Defines operations on a circle"""
+import math
 
 
 class MagicClass:
