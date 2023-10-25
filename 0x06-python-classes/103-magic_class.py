@@ -5,7 +5,7 @@ import math
 
 class MagicClass:
     """A class to compute area and circumference of a acircle"""
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """
         Initializes the MagicClass with a given radius
         Arguments of the raduis should be float
@@ -17,7 +17,7 @@ class MagicClass:
 
     def area(self):
         """Calculates and returns the area"""
-        return (math.pi * (self.__radius ** 2)
+        return (math.pi * (self.__radius ** 2))
 
     def circumference(self):
         """Calculates and returns the circumference"""
