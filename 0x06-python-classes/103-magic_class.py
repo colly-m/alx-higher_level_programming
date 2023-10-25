@@ -9,7 +9,7 @@ class MagicClass:
         """
         Initializes the MagicClass with a given radius"""
         self.__radius = 0
-        if not (isisnstance(radius, int) or isinstance(radius, float)):
+        if not (isinstance(radius, int) or isinstance(radius, float)):
             raise TypeError("radius must be a number")
         self.__radius = radius
 
