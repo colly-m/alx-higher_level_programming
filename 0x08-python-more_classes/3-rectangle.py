@@ -19,8 +19,7 @@ class Rectangle:
         for a in range(self.__height):
             for b in range(self.__width):
                 rectangle_str += "#"
-            if a < self.__height - 1:
-                rectangle_str += "\n"
+            rectangle_str += "\n"
         return (rectangle_str[:-1])
 
     @property
