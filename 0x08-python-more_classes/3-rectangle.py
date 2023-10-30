@@ -11,6 +11,18 @@ class Rectangle:
         self.width = width
         self.height = height
 
+    def __str__(self):
+        """Returns an informal string representation"""
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+        rectangle_str = ""
+        for a in range(self.__height):
+            for b in range(self.__width):
+                rectangle_str += "#"
+            if a < self.__height - 1:
+                rectangle_str += "\n"
+        return (rectangle_str[:-1])
+
     @property
     def width(self):
         """Gets the width of a rectangle instance"""
@@ -54,15 +66,3 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (0)
         return (2 * (self.__width + self.__height))
-
-    def __str__(self):
-        """Returns an informal string representation"""
-        if self.__width == 0 or self.__height == 0:
-            return ("")
-        rectangle_str = ""
-        for a in range(self.__height):
-            for b in range(self.__width):
-                rectangle_str += "#"
-            if a < self.__height - 1:
-                rectangle_str += "\n"
-        return (rectangle_str[:-1])
