@@ -3,10 +3,11 @@
 
 
 class Rectangle:
+    """Defines a class rectangle"""
+
+
     number_of_instances = 0
 
-
-    """Defines a class rectangle"""
     def __init__(self, width=0, height=0):
         """Initialises the features of the object"""
         self.__width = 0
