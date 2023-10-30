@@ -6,9 +6,7 @@ class Rectangle:
     """Defines a class rectangle"""
     
     number_of_instances = 0
-    print_symbol = "#"
-    print_symbol = "&"
-    print_symbol = ["C", "is", "fun!"]
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """Initialises the features of the object"""
