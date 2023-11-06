@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""Module defines a rectangle of a square subclass"""
-
+"""Module defines a Rectangle"""
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """A square class body within a rectangle"""
+    """class body"""
 
     def __init__(self, size):
 
