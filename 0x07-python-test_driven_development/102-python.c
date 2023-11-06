@@ -1,4 +1,7 @@
 #include "Python.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 /**
  * print_python_string - function to print info mation on a Python strings.
