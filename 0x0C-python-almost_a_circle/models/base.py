@@ -6,7 +6,8 @@ import turtle
 
 
 class Base:
-    """Representation of a base model"""
+    """Representation of a base model
+    With private class atributes giving nmber of instances"""
     __nb_objects = 0
     def __init__(self, id=None):
         if id is not None:
@@ -88,7 +89,7 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Gets list of class instances from CSV file"""
-        file_name = "{}.csv".format(cls.__name__)
+        file_name = "{}.json".format(cls.__name__)
 
         try:
             with open(file_name, "r") as csvfile:
