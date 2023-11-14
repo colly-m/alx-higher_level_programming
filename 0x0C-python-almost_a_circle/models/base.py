@@ -37,7 +37,7 @@ class Base:
         """Gets the list represented by the json string"""
         if json_string is None or json_string == "[]":
             return ([])
-        return (json.loads(json_string))
+        return (loads(json_string))
 
     @classmethod
     def create(cls, **dictionary):
@@ -55,18 +55,14 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """"""
-        file_name = "{}.json".format(cls.__name__)
+        """Loads into csv file"""
+        fName = str(cls.__name__) + ".json"
         try:
-            with open(file_name, "r") as jsonfile:
+            with open(fName, "r") as jsonfile:
                 list_dicts = Base.from_json_string(jsonfile.read())
-                list_instances = []
-
-                for d in list_dicts:
-                    list_instances.append(cls.create(**d))
-                return (list_instances)
-        except fileNotFoundError:
-            return([])
+                return ([cls.create(**d) for d in list_dicts])
+        except IOError:
+            return ([])
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
