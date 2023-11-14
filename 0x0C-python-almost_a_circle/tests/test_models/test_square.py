@@ -1,18 +1,17 @@
 #!/usr/bin/python3
 #test_square.py
 """Module for Square unit tests."""
+import io
 import unittest
 import sys
 from models.base import Base
 from models.square import Square
 from random import randrange
 from contextlib import redirect_stdout
-import io
 
 
 class TestSquare(unittest.TestCase):
     """Tests the Base class."""
-
     def setUp(self):
         """Imports module, instantiates class"""
         Base._Base__nb_objects = 0
@@ -21,7 +20,6 @@ class TestSquare(unittest.TestCase):
         """Cleans up after each test_method."""
         pass
 
-    # ----------------- Tests for #2 ------------------------
 
     def test_A_class(self):
         """Tests Square class type."""
@@ -129,7 +127,7 @@ were given"
         self.assertEqual(r.x, 102)
         self.assertEqual(r.y, 103)
 
-    # ----------------- Tests for #3 ------------------------
+
 
     def invalid_types(self):
         """Returns tuple of types for validation."""
@@ -200,7 +198,7 @@ were given"
         self.assertEqual(r.x, 0)
         self.assertEqual(r.y, 0)
 
-    # ----------------- Tests for #4 ------------------------
+
     def test_I_area_no_args(self):
         '''Tests area() method signature.'''
         r = Square(5)
@@ -239,7 +237,8 @@ were given"
             s1.size = 0
         self.assertEqual(str(e.exception), "width must be > 0")
 
-    # ----------------- Tests for #5 & #7 ------------------------
+
+
     def test_J_display_no_args(self):
         """Tests display() method signature."""
         r = Square(9)
@@ -420,7 +419,7 @@ were given"
 """
         self.assertEqual(f.getvalue(), s)
 
-        # ----------------- Tests for #6 ------------------------
+
 
     def test_K_str_no_args(self):
         """Tests __str__() method signature."""
@@ -445,7 +444,7 @@ were given"
         s = '[Square] (40) 20/30 - 10'
         self.assertEqual(str(r), s)
 
-        # ----------------- Tests for #8 & #9 ------------------------
+
     def test_L_update_no_args(self):
         """Tests update() method signature."""
         r = Square(5, 2)
@@ -556,7 +555,7 @@ were given"
         self.assertEqual(str(s1), "[Square] (1) 0/0 - 5")
 
         s1.update(10)
-        self.assertEqual(str(s1), "[Square] (1) 10/0 - 5")
+        self.assertEqual(str(s1), "[Square] (10) 0/0 - 5")
 
         s1.update(1, 2)
         self.assertEqual(str(s1), "[Square] (1) 0/0 - 2")
@@ -576,7 +575,7 @@ were given"
         s1.update(size=7, id=89, y=1)
         self.assertEqual(str(s1), "[Square] (89) 12/1 - 7")
 
-    # ----------------- Tests for #14 ------------------------
+
     def test_M_to_dictionary(self):
         """Tests to_dictionary() signature:"""
         with self.assertRaises(TypeError) as e:
