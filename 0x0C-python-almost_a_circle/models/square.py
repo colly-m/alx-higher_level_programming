@@ -32,7 +32,8 @@ class Square(Rectangle):
                 if count == 3:
                     self.y = attr
                 else:
-                    break
+                    continue
+
         elif len(kwargs) > 0:
             for key, value in kwargs.items():
                 if key == "id":
@@ -44,8 +45,6 @@ class Square(Rectangle):
                     self.x = value
                 elif key == "y":
                     self.y = value
-                else:
-                    break
 
     def to_dictionary(self):
         """A dictionary representation of a square"""
