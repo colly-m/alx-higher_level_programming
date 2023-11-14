@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module defines a base model class"""
-import json
+from json import dumps, loads
 import csv
 import turtle
 
@@ -20,22 +20,18 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Defines a list represrentation of a dictionary list"""
-        if list_dictionaries is None or list_dictionaries == []:
-            return "[]"
-        to_json = json.dumps(list_dictionaries)
-
-        return (to_json)
+        if list_dictionaries is None or not list_dictionaries:
+            return ("[]")
+        else:
+            return (dumps(list_dictionaries))
 
     @classmethod
     def save_to_file(cls, list_objs):
         """Gets a JSON string representation with args list to a file"""
-        file_name = cls.__name__ + ".json"
-        with open(file_name, "w") as jsonfile:
-            if list_objs is None:
-                jsonfile.write("[]")
-            else:
-                list_dict = [obj.to_dictionary() for obj in list_objs]
-                jsonfile.write(Base.to__json_string(list_dict))
+        if list_objs is not None:
+            list_objs = [obj.to_dictionary() for obj in list_objs]
+        with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
+            f.write(cls.to_json_string(list_objs))
 
     def from_json_string(json_string):
         """Gets the list represented by the json string"""
