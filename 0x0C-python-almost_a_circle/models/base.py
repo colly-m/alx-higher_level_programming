@@ -9,6 +9,7 @@ class Base:
     """Representation of a base model
     With private class atributes giving nmber of instances"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         if id is not None:
             self.id = id
@@ -110,7 +111,7 @@ class Base:
 
                         list_of_instances = []
 
-                    for c in list_dicts:
+                        for c in list_dicts:
                             list_of_instances.append(cls.create(**d))
 
                     return (list_of_instances)
@@ -149,7 +150,6 @@ class Base:
 
             turt.hideturtle()
 
-
         turt.color("#4682B4")
 
         for sqr in list_squares:
@@ -172,9 +172,6 @@ class Base:
             turt.hideturtle()
 
         turtle.exitonclick()
-
-                                    
-
 
 
 if __name__ == "__main__":

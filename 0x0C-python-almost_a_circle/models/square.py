@@ -19,10 +19,6 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    def __str__(self):
-        """A string representation"""
-        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width))
-
     def update(self, *args, **kwargs):
         """Assignes arguments to attributes based in position"""
         if args:
@@ -60,3 +56,8 @@ class Square(Rectangle):
                 "y": self.y
                 }
         return (square_dict)
+
+    def __str__(self):
+        """String representation of a square"""
+        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                  self.width))
