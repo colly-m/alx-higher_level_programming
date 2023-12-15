@@ -1,5 +1,6 @@
 -- Script to list all 'Comedy' genre shows in 'hbtn_0d_tvshows' database
 
+SELECT title
 FROM tv_shows
 WHERE title NOT IN (
 SELECT title
