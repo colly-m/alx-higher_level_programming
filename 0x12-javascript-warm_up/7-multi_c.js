@@ -1,15 +1,13 @@
 #!/usr/bin/node
 
-if (process.argv.length < 3) {
+if (process.argv[2] === undefined || isNaN(process.argv[2])) {
   console.log('Missing number of occurrences');
 } else {
-  const x = parseInt(process.argv[2]);
+  const x = Number(process.argv[2]);
 
-  if (isNaN(x)) {
-    console.log('Missing number of occurrences');
-  } else {
-    for (let o = 0; o < x; o++) {
-      console.log('C is fun');
-    }
+  let o = 0;
+  while (o < x) {
+    console.log('C is fun');
+    o++;
   }
 }
