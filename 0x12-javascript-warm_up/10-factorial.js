@@ -1,14 +1,13 @@
 #!/usr/bin/node
 
-const computeFactorial = (n) => {
-  if (isNaN(n) || n === 0) {
-    return 1;
-  } else {
-    return n * computeFactorial(n - 1);
+function computeFactorial (n) {
+  if (n < 0) {
+    return (-1);
   }
-};
+  if (n === 0 || isNaN(n)) {
+    return (1);
+  }
+  return (n * computeFactorial(n - 1));
+}
 
-const inputArgument = process.argv[2];
-const n = parseInt(inputArgument);
-
-console.log(computeFactorial(n));
+console.log(computeFactorial(Number(process.argv[2])));
