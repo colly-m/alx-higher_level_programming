@@ -6,6 +6,16 @@ class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
+
+  charPrint (c) {
+    if (c === undefined) {
+      c = 'X';
+    }
+
+    for (let s = 0; s < this.height; s++) {
+      console.log(c.repeat(this.width));
+    }
+  }
 }
 
 module.exports = Square;
