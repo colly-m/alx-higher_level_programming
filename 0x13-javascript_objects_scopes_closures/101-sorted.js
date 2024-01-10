@@ -1,22 +1,16 @@
 #!/usr/bin/node
 
-const data = require('./101-data.js');
+const dict = require('./101-data.js').dict;
 
-function computeUserIdsByOccurrence (inputData) {
-  const userIdsByOccurrence = {};
+const Keys = Object.keys(dict);
+const values = Object.values(dict);
+let same;
+const output = {};
 
-  for (const userId in inputData) {
-    const occurrences = inputData[userId];
-
-    if (userIdsByOccurrence[occurrences] === undefined) {
-      userIdsByOccurrence[occurrences] = [userId];
-    } else {
-      userIdsByOccurrence[occurrences].push(userId);
-    }
-  }
-
-  return userIdsByOccurrence;
+for (let n = 0; n < values.length; n++) {
+  output[JSON.stringify(values[n])] = [];
+  same = Keys.filter(key => dict[key] === values[n]);
+  same.forEach(item => output[JSON.stringify(values[n])].push(item));
 }
-const result = computeUserIdsByOccurrence(data);
 
-console.log(result);
+console.log(output);
