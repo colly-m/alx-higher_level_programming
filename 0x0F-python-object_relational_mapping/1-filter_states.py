@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Script lists all states names starting with 'N' from 'hbtn_0e_0_usa' database"""
+"""Script lists all states names starting with 'N' from
+'hbtn_0e_0_usa' database
+"""
 
 
 import MySQLdb
@@ -22,4 +24,4 @@ if __name__ == '__main__':
     rows = cursor.fetchall()
 
     for row in rows:
-        print(rows)
+        print(row)
