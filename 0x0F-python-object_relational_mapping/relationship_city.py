@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""Module containing the City class"""
+"""Script to define a City class working with MySQLAlchemy ORM"""
 
 
 from sqlalchemy import Column, Integer, String, ForeignKey
-from model_state import Base
+from relationship_state import Base, State
 
 
 class City(Base):
     """
-    City class to interact with database id (int): id of classs
-    state_id (int): state city belongs to
-    name (str): name of class
+    Defines a city class:
+    id (int): The id of the class, name (str): The name of the class
+    state_id (int): The state the city belongs in
     """
     __tablename__ = 'cities'
 
