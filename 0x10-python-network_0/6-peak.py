@@ -7,7 +7,7 @@ def find_peak(list_of_integers):
     Args: list_of_integers: the list
     """
     if not list_of_integers:
-        return None 
+        return None
 
     low, high = 0, len(list_of_integers) - 1
 
