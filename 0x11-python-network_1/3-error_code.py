@@ -6,6 +6,7 @@ import urllib.request
 
 
 def fetch_url_body(url):
+    """Module to fetch the contents"""
     try:
         with urllib.request.urlopen(url) as response:
             body = response.read().decode('utf-8')
@@ -13,7 +14,9 @@ def fetch_url_body(url):
     except urllib.error.HTTPError as e:
         print(f"Error code: {e.code}")
 
+
 if __name__ == "__main__":
+
     if len(sys.argv) != 2:
         print("Usage: python script_name.py <URL>")
         sys.exit(1)
